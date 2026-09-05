@@ -1,0 +1,214 @@
+/* UI.module.css
+   Shared CSS Module for the reusable UI components (Button, Badge, Card,
+   SearchBar, Modal). Colours come from the global palette defined in index.css. */
+
+/* ------------------------------- Button ------------------------------- */
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  padding: 0.6rem 1.1rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
+}
+
+.button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.primary {
+  background-color: var(--color-primary);
+  color: #fff;
+}
+.primary:hover:not(:disabled) {
+  background-color: var(--color-primary-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+}
+
+.secondary {
+  background-color: var(--color-surface);
+  color: var(--color-text);
+  border: 1px solid var(--color-border);
+}
+.secondary:hover:not(:disabled) {
+  background-color: var(--color-bg);
+  transform: translateY(-2px);
+}
+
+.danger {
+  background-color: var(--color-danger);
+  color: #fff;
+}
+.danger:hover:not(:disabled) {
+  background-color: #b91c1c;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(220, 38, 38, 0.3);
+}
+
+/* -------------------------------- Badge ------------------------------- */
+.badge {
+  display: inline-block;
+  padding: 0.2rem 0.6rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border-radius: 999px;
+  text-transform: capitalize;
+  letter-spacing: 0.02em;
+}
+
+.badge_default {
+  background-color: #eef2ff;
+  color: #4338ca;
+}
+.badge_category {
+  background-color: #e0f2fe;
+  color: #075985;
+}
+.badge_beginner {
+  background-color: #dcfce7;
+  color: #166534;
+}
+.badge_intermediate {
+  background-color: #fef9c3;
+  color: #854d0e;
+}
+.badge_advanced {
+  background-color: #fee2e2;
+  color: #991b1b;
+}
+
+/* -------------------------------- Card -------------------------------- */
+.card {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: 1.25rem;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.08);
+}
+
+.cardHoverable {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+}
+.cardHoverable:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.12);
+}
+
+/* ------------------------------ SearchBar ----------------------------- */
+.searchBar {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem;
+  background-color: var(--color-surface);
+  border: 2px solid var(--color-border);
+  border-radius: 10px;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+.searchBarFocused {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+.searchInput {
+  flex: 1;
+  border: none;
+  outline: none;
+  padding: 0.5rem 0.6rem;
+  font-size: 1rem;
+  background: transparent;
+  color: var(--color-text);
+}
+.clearButton {
+  border: none;
+  background: transparent;
+  color: var(--color-muted);
+  cursor: pointer;
+  font-size: 0.9rem;
+  padding: 0.4rem 0.6rem;
+  border-radius: 6px;
+  transition: color 0.15s ease, background-color 0.15s ease;
+}
+.clearButton:hover {
+  color: var(--color-danger);
+  background-color: #fef2f2;
+}
+.searchButton {
+  border: none;
+  background-color: var(--color-primary);
+  color: #fff;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+.searchButton:hover {
+  background-color: var(--color-primary-dark);
+}
+
+/* -------------------------------- Modal ------------------------------- */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(15, 23, 42, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  z-index: 1000;
+}
+.modal {
+  background-color: var(--color-surface);
+  border-radius: 14px;
+  width: 100%;
+  max-width: 560px;
+  max-height: 85vh;
+  overflow-y: auto;
+  box-shadow: 0 20px 50px rgba(15, 23, 42, 0.3);
+  animation: modalIn 0.2s ease;
+}
+@keyframes modalIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.modalHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid var(--color-border);
+}
+.modalTitle {
+  margin: 0;
+  font-size: 1.2rem;
+  color: var(--color-text);
+}
+.closeButton {
+  border: none;
+  background: transparent;
+  font-size: 1.6rem;
+  line-height: 1;
+  cursor: pointer;
+  color: var(--color-muted);
+  transition: color 0.15s ease;
+}
+.closeButton:hover {
+  color: var(--color-danger);
+}
+.modalBody {
+  padding: 1.25rem;
+}

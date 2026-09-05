@@ -1,0 +1,32 @@
+/* Media.module.css — styles for the VideoPlayer and AudioPlayer components. */
+
+.mediaContainer {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: 1.25rem;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.08);
+}
+
+.mediaTitle {
+  margin: 0 0 0.35rem;
+  color: var(--color-text);
+}
+
+.mediaDesc {
+  margin: 0 0 0.9rem;
+  color: var(--color-muted);
+  font-size: 0.95rem;
+}
+
+.video {
+  width: 100%;
+  border-radius: 10px;
+  background-color: #000;
+  display: block;
+}
+
+.audio {
+  width: 100%;
+  margin-top: 0.5rem;
+}

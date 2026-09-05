@@ -1,0 +1,171 @@
+/* Exercise.module.css — styles for ExerciseCard, ExerciseList, ExerciseFilter
+   and ExerciseDetail. */
+
+/* ------------------------------ Card ------------------------------ */
+.cardHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+.title {
+  margin: 0;
+  font-size: 1.1rem;
+  color: var(--color-text);
+}
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-bottom: 0.75rem;
+}
+.meta {
+  margin: 0 0 1rem;
+  color: var(--color-muted);
+  font-size: 0.9rem;
+}
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+.daySelect {
+  padding: 0.5rem;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  background-color: var(--color-surface);
+  color: var(--color-text);
+  cursor: pointer;
+}
+
+/* ------------------------------ List ------------------------------ */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.25rem;
+}
+.empty,
+.error {
+  text-align: center;
+  padding: 2.5rem 1rem;
+  border-radius: 12px;
+  background-color: var(--color-surface);
+  border: 1px dashed var(--color-border);
+}
+.empty p {
+  margin: 0 0 0.35rem;
+  font-weight: 600;
+  color: var(--color-text);
+}
+.empty span {
+  color: var(--color-muted);
+}
+.error {
+  color: var(--color-danger);
+  border-color: var(--color-danger);
+  background-color: #fef2f2;
+  font-weight: 600;
+}
+
+/* ----------------------------- Filter ----------------------------- */
+.filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: flex-end;
+  margin: 1rem 0 1.5rem;
+}
+.filterGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+.label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--color-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+.select {
+  padding: 0.55rem 0.75rem;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  background-color: var(--color-surface);
+  color: var(--color-text);
+  cursor: pointer;
+  min-width: 150px;
+  transition: border-color 0.15s ease;
+}
+.select:hover {
+  border-color: var(--color-primary);
+}
+
+/* ----------------------------- Detail ----------------------------- */
+.detail {
+  max-width: 900px;
+  margin: 0 auto;
+}
+.detailNav {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+.detailHeader {
+  margin-bottom: 1rem;
+}
+.detailGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+.instructions {
+  padding-left: 1.25rem;
+  line-height: 1.8;
+}
+.statRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin: 1rem 0;
+}
+.stat {
+  font-weight: 600;
+  color: var(--color-text);
+}
+.statLabel {
+  display: block;
+  font-size: 0.8rem;
+  color: var(--color-muted);
+  font-weight: 500;
+}
+.logForm {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+.logField {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+.logField input {
+  padding: 0.6rem;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  font-size: 1rem;
+}
+.notFound {
+  text-align: center;
+  padding: 3rem 1rem;
+}
+
+/* Responsive: two-column detail layout on wider screens. */
+@media (min-width: 768px) {
+  .detailGrid {
+    grid-template-columns: 3fr 2fr;
+  }
+}
