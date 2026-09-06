@@ -15,7 +15,7 @@ const AudioPlayer = ({
     {/* Conditional rendering (&&): description is optional. */}
     {description && <p className={styles.mediaDesc}>{description}</p>}
     <audio controls className={styles.audio} data-testid="audio-player">
-      <source src={audioUrl} type="audio/mpeg" />
+      <source src={audioUrl} type="audio/wav" />
       {/* Fallback content for browsers without HTML5 audio support. */}
       Your browser does not support the audio element.
     </audio>

@@ -1,0 +1,85 @@
+/* Pages.module.css — shared layout styles for the route pages. */
+
+.page {
+  width: 100%;
+}
+.pageTitle {
+  margin: 0 0 0.35rem;
+  color: var(--color-text);
+}
+.pageIntro {
+  margin: 0 0 1.5rem;
+  color: var(--color-muted);
+}
+.sectionTitle {
+  margin: 2rem 0 1rem;
+  color: var(--color-text);
+}
+.resultsCount {
+  margin: 0 0 1rem;
+  color: var(--color-muted);
+  font-size: 0.9rem;
+}
+.toolbar {
+  margin-bottom: 1rem;
+}
+
+/* -------------------------------- Home -------------------------------- */
+.hero {
+  margin-bottom: 2rem;
+}
+.heroActions {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+  margin-top: 1.25rem;
+  flex-wrap: wrap;
+}
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.25rem;
+  margin: 1.5rem 0;
+}
+.feature {
+  text-align: center;
+}
+.featureIcon {
+  font-size: 2rem;
+}
+.featureTitle {
+  margin: 0.5rem 0 0.35rem;
+}
+.featureText {
+  margin: 0;
+  color: var(--color-muted);
+  font-size: 0.92rem;
+}
+
+/* ------------------------------ Progress ------------------------------ */
+.statGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+.statValue {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--color-primary);
+}
+.statLabel {
+  color: var(--color-muted);
+  font-size: 0.9rem;
+}
+
+/* ------------------------------ NotFound ------------------------------ */
+.notFound {
+  text-align: center;
+  padding: 4rem 1rem;
+}
+.notFoundCode {
+  font-size: 4rem;
+  margin: 0;
+  color: var(--color-primary);
+}
