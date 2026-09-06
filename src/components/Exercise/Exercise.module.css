@@ -39,6 +39,12 @@
   color: var(--color-text);
   cursor: pointer;
 }
+.inPlan {
+  margin: 0.6rem 0 0;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-success);
+}
 
 /* ------------------------------ List ------------------------------ */
 .grid {

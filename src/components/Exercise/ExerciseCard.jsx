@@ -57,19 +57,17 @@ const ExerciseCard = ({ exercise, isInPlan = false, onAdd, onView }) => {
         </select>
 
         {/* onClick calls the parent callback with the chosen day + exercise. */}
-        <Button
-          variant="primary"
-          onClick={() => onAdd(selectedDay, exercise)}
-          disabled={isInPlan}
-        >
-          {/* Ternary for conditional label. */}
-          {isInPlan ? 'In Plan ✓' : 'Add'}
+        <Button variant="primary" onClick={() => onAdd(selectedDay, exercise)}>
+          Add
         </Button>
 
         <Button variant="secondary" onClick={() => onView(id)}>
           View
         </Button>
       </div>
+
+      {/* Ternary: indicate when this exercise is already somewhere in the plan. */}
+      {isInPlan ? <p className={styles.inPlan}>✓ In your plan</p> : null}
     </Card>
   );
 };
